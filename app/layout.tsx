@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Albani Rajata Malik — Full Stack Developer",
+  title: "Portfolio | Albani Rajata Malik",
   description: "Full Stack Software Engineer based in Malang, Indonesia. Specializing in React, Node.js, TypeScript, and PostgreSQL.",
 };
 

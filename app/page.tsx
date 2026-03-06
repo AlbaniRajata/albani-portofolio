@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import "./page.css";
 
 const GithubIcon = () => (
@@ -16,7 +17,14 @@ const LinkedinIcon = () => (
 );
 
 const MailIcon = () => (
-  <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="16" height="16">
+  <svg
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+  >
     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
   </svg>
 );
@@ -128,11 +136,26 @@ const certifications = [
   { name: "Software Engineer", org: "HackerRank · Feb 2026" },
   { name: "The Complete Microsoft Excel Course 2025", org: "Udemy · Aug 2025" },
   { name: "Digital Marketing: Beginner to Pro", org: "Udemy · Mar 2025" },
-  { name: "Flutter REST Movie App: Master Flutter REST API Development", org: "Udemy · Feb 2025" },
-  { name: "React AI Chatbot App built with ChatGPT and Gemini AI", org: "Udemy · Jan 2025" },
-  { name: "Learn HTML, CSS, JS the Hard Way: with Projects", org: "Udemy · Jan 2025" },
-  { name: "Build A Chat Application With Firebase, Flutter and Provider", org: "Udemy · Jan 2025" },
-  { name: "Build Full Stack Web App with React and Firebase", org: "Udemy · Jan 2025" },
+  {
+    name: "Flutter REST Movie App: Master Flutter REST API Development",
+    org: "Udemy · Feb 2025",
+  },
+  {
+    name: "React AI Chatbot App built with ChatGPT and Gemini AI",
+    org: "Udemy · Jan 2025",
+  },
+  {
+    name: "Learn HTML, CSS, JS the Hard Way: with Projects",
+    org: "Udemy · Jan 2025",
+  },
+  {
+    name: "Build A Chat Application With Firebase, Flutter and Provider",
+    org: "Udemy · Jan 2025",
+  },
+  {
+    name: "Build Full Stack Web App with React and Firebase",
+    org: "Udemy · Jan 2025",
+  },
 ];
 
 const experiences = [
@@ -193,7 +216,10 @@ export default function Home() {
     const isTouch = window.matchMedia("(hover: none)").matches;
     if (isTouch) return;
 
-    let mx = 0, my = 0, rx = 0, ry = 0;
+    let mx = 0,
+      my = 0,
+      rx = 0,
+      ry = 0;
 
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
@@ -213,10 +239,18 @@ export default function Home() {
     };
     animateRing();
 
-    const hoverEls = document.querySelectorAll("a, button, .project-card, .skill-chip, .stat-card");
-    hoverEls.forEach(el => {
-      el.addEventListener("mouseenter", () => { cursor.classList.add("hover"); ring.classList.add("hover"); });
-      el.addEventListener("mouseleave", () => { cursor.classList.remove("hover"); ring.classList.remove("hover"); });
+    const hoverEls = document.querySelectorAll(
+      "a, button, .project-card, .skill-chip, .stat-card",
+    );
+    hoverEls.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("hover");
+        ring.classList.add("hover");
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("hover");
+        ring.classList.remove("hover");
+      });
     });
 
     return () => {
@@ -227,21 +261,26 @@ export default function Home() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          observer.unobserve(e.target);
-        }
-      }),
-      { threshold: 0.1 }
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            observer.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.1 },
     );
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-    document.querySelectorAll(".projects-grid, .skills-grid, .cert-list, .about-stats").forEach(grid => {
-      Array.from(grid.children).forEach((child, i) => {
-        (child as HTMLElement).style.transitionDelay = i * 0.07 + "s";
+    document
+      .querySelectorAll(
+        ".projects-grid, .skills-grid, .cert-list, .about-stats",
+      )
+      .forEach((grid) => {
+        Array.from(grid.children).forEach((child, i) => {
+          (child as HTMLElement).style.transitionDelay = i * 0.07 + "s";
+        });
       });
-    });
 
     return () => observer.disconnect();
   }, []);
@@ -249,7 +288,9 @@ export default function Home() {
   const toggleDrawer = () => {
     toggleRef.current?.classList.toggle("open");
     drawerRef.current?.classList.toggle("open");
-    document.body.style.overflow = drawerRef.current?.classList.contains("open") ? "hidden" : "";
+    document.body.style.overflow = drawerRef.current?.classList.contains("open")
+      ? "hidden"
+      : "";
   };
 
   const closeDrawer = () => {
@@ -264,39 +305,71 @@ export default function Home() {
       <div className="cursor-ring" ref={ringRef} />
 
       <nav className="nav">
-        <a href="#hero" className="nav-logo">ARM<span>.</span></a>
+        <a href="#hero" className="nav-logo">
+          ARM<span>.</span>
+        </a>
         <ul className="nav-links">
-          {navSections.map(s => (
-            <li key={s}><a href={`#${s}`}>{s}</a></li>
+          {navSections.map((s) => (
+            <li key={s}>
+              <a href={`#${s}`}>{s}</a>
+            </li>
           ))}
         </ul>
-        <button className="nav-toggle" ref={toggleRef} onClick={toggleDrawer} aria-label="Toggle menu">
-          <span /><span /><span />
+        <button
+          className="nav-toggle"
+          ref={toggleRef}
+          onClick={toggleDrawer}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
         </button>
       </nav>
 
       <div className="nav-drawer" ref={drawerRef}>
-        {navSections.map(s => (
-          <a key={s} href={`#${s}`} onClick={closeDrawer}>{s}</a>
+        {navSections.map((s) => (
+          <a key={s} href={`#${s}`} onClick={closeDrawer}>
+            {s}
+          </a>
         ))}
       </div>
 
       <section id="hero" className="hero">
         <div className="hero-bg-text">DEV</div>
         <div className="hero-left">
-          <div className="hero-tag">Full Stack Software Engineer</div>
+          <div className="hero-tag">Full Stack Software Developer</div>
           <h1 className="hero-name">
-            Albani<br /><span className="accent">Rajata</span><br />Malik
+            Albani
+            <br />
+            <span className="accent">Rajata</span>
+            <br />
+            Malik
           </h1>
           <p className="hero-desc">
-            I build web and mobile applications from the ground up. My work covers everything from API design and database architecture to frontend performance and user experience. Based in Malang, Indonesia.
+            I build web and mobile applications from the ground up. My work
+            covers everything from API design and database architecture to
+            frontend performance and user experience. Based in Malang,
+            Indonesia.
           </p>
           <div className="hero-cta">
-            <a href="#projects" className="btn-primary">View Projects ↓</a>
-            <a href="mailto:itsalbanirajata123@gmail.com" className="btn-outline">Get In Touch</a>
+            <a href="#projects" className="btn-primary">
+              View Projects ↓
+            </a>
+            <a
+              href="mailto:itsalbanirajata123@gmail.com"
+              className="btn-outline"
+            >
+              Get In Touch
+            </a>
           </div>
         </div>
-        <div className="hero-scroll"><span className="scroll-line" /> Scroll to explore</div>
+        <div className="hero-photo-seamless">
+          <Image src="/profile.png" alt="Albani Rajata Malik" fill priority />
+        </div>
+        <div className="hero-scroll">
+          <span className="scroll-line" /> Scroll to explore
+        </div>
       </section>
 
       <section id="about" className="about-section">
@@ -307,26 +380,66 @@ export default function Home() {
         </div>
         <div className="about-grid">
           <div className="about-text reveal">
-            <p>I&apos;m <strong>Albani Rajata Malik</strong>, a Full Stack Software Engineer in my final year at <strong>State Polytechnic of Malang</strong>, majoring in Business Information Systems.</p>
-            <p>My stack revolves around <strong>React, Node.js, TypeScript, and PostgreSQL</strong>. I enjoy working across the full product lifecycle, from mapping out business logic and designing databases, to building interfaces that people actually want to use.</p>
-            <p>Before getting deep into code, I spent years doing graphic design and apparel branding. That background still shapes how I approach the frontend and the visual side of any product I build.</p>
+            <p>
+              I&apos;m <strong>Albani Rajata Malik</strong>, a Full Stack
+              Software Developer in my final year at{" "}
+              <strong>State Polytechnic of Malang</strong>, majoring in Business
+              Information Systems.
+            </p>
+            <p>
+              My stack revolves around{" "}
+              <strong>React, Node.js, TypeScript, and PostgreSQL</strong>. I
+              enjoy working across the full product lifecycle, from mapping out
+              business logic and designing databases, to building interfaces
+              that people actually want to use.
+            </p>
+            <p>
+              Before getting deep into code, I spent years doing graphic design
+              and apparel branding. That background still shapes how I approach
+              the frontend and the visual side of any product I build.
+            </p>
             <div className="about-links">
-              <a href="https://linkedin.com/in/albani-rajata-malik/" target="_blank" rel="noreferrer" className="about-link">
+              <a
+                href="https://linkedin.com/in/albani-rajata-malik/"
+                target="_blank"
+                rel="noreferrer"
+                className="about-link"
+              >
                 <LinkedinIcon /> linkedin.com/in/albani-rajata-malik
               </a>
-              <a href="https://github.com/AlbaniRajata" target="_blank" rel="noreferrer" className="about-link">
+              <a
+                href="https://github.com/AlbaniRajata"
+                target="_blank"
+                rel="noreferrer"
+                className="about-link"
+              >
                 <GithubIcon /> github.com/AlbaniRajata
               </a>
-              <a href="mailto:itsalbanirajata123@gmail.com" className="about-link">
+              <a
+                href="mailto:itsalbanirajata123@gmail.com"
+                className="about-link"
+              >
                 <MailIcon /> itsalbanirajata123@gmail.com
               </a>
             </div>
           </div>
           <div className="about-stats reveal">
-            <div className="stat-card"><div className="stat-num">3+</div><div className="stat-label">Years in Design</div></div>
-            <div className="stat-card"><div className="stat-num">6+</div><div className="stat-label">Projects Built</div></div>
-            <div className="stat-card"><div className="stat-num">10+</div><div className="stat-label">Certifications</div></div>
-            <div className="stat-card"><div className="stat-num">860</div><div className="stat-label">PECT English Score</div></div>
+            <div className="stat-card">
+              <div className="stat-num">3+</div>
+              <div className="stat-label">Years in Design</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-num">6+</div>
+              <div className="stat-label">Projects Built</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-num">10+</div>
+              <div className="stat-label">Certifications</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-num">860</div>
+              <div className="stat-label">PECT English Score</div>
+            </div>
           </div>
         </div>
       </section>
@@ -346,7 +459,9 @@ export default function Home() {
             <div>
               <div className="exp-role">{exp.role}</div>
               <ul className="exp-bullets">
-                {exp.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                {exp.bullets.map((b, j) => (
+                  <li key={j}>{b}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -367,10 +482,19 @@ export default function Home() {
               <p className="project-desc">{p.desc}</p>
               <div className="project-footer">
                 <div className="project-stack">
-                  {p.stack.map(t => <span className="tag" key={t}>{t}</span>)}
+                  {p.stack.map((t) => (
+                    <span className="tag" key={t}>
+                      {t}
+                    </span>
+                  ))}
                 </div>
                 {p.github ? (
-                  <a href={p.github} target="_blank" rel="noreferrer" className="project-github">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-github"
+                  >
                     <GithubIcon /> View Repo
                   </a>
                 ) : (
@@ -393,8 +517,13 @@ export default function Home() {
             <div className="skill-group reveal" key={i}>
               <div className="skill-group-title">{group.title}</div>
               <div className="skill-chips">
-                {group.chips.map(c => (
-                  <span className={`skill-chip${c.highlight ? " highlight" : ""}`} key={c.label}>{c.label}</span>
+                {group.chips.map((c) => (
+                  <span
+                    className={`skill-chip${c.highlight ? " highlight" : ""}`}
+                    key={c.label}
+                  >
+                    {c.label}
+                  </span>
                 ))}
               </div>
             </div>
@@ -422,24 +551,49 @@ export default function Home() {
       </section>
 
       <section id="contact" className="contact-section">
-        <h2 className="contact-headline reveal">Let&apos;s<br /><span className="accent">Work</span><br />Together.</h2>
-        <p className="contact-sub reveal">Got a project in mind or just want to talk? My inbox is always open.</p>
+        <h2 className="contact-headline reveal">
+          Let&apos;s
+          <br />
+          <span className="accent">Work</span>
+          <br />
+          Together.
+        </h2>
+        <p className="contact-sub reveal">
+          Got a project in mind or just want to talk? My inbox is always open.
+        </p>
         <div className="contact-links reveal">
-          <a href="mailto:itsalbanirajata123@gmail.com" className="contact-link">
+          <a
+            href="mailto:itsalbanirajata123@gmail.com"
+            className="contact-link"
+          >
             <MailIcon /> itsalbanirajata123@gmail.com
           </a>
-          <a href="https://linkedin.com/in/albani-rajata-malik/" target="_blank" rel="noreferrer" className="contact-link">
+          <a
+            href="https://linkedin.com/in/albani-rajata-malik/"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-link"
+          >
             <LinkedinIcon /> LinkedIn
           </a>
-          <a href="https://github.com/AlbaniRajata" target="_blank" rel="noreferrer" className="contact-link">
+          <a
+            href="https://github.com/AlbaniRajata"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-link"
+          >
             <GithubIcon /> GitHub
           </a>
         </div>
       </section>
 
       <footer className="footer">
-        <p>© 2026 <span>Albani Rajata Malik</span>. All rights reserved.</p>
-        <p>Designed & Built with <span>♥</span></p>
+        <p>
+          © 2026 <span>Albani Rajata Malik</span>. All rights reserved.
+        </p>
+        <p>
+          Designed & Built with <span>♥</span>
+        </p>
       </footer>
     </>
   );
