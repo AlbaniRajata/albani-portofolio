@@ -354,7 +354,7 @@ export default function Home() {
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn-primary">
-              View Projects ↓
+              View Projects
             </a>
             <a
               href="mailto:itsalbanirajata123@gmail.com"

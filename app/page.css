@@ -180,6 +180,13 @@ section {
   height: 100vh;
   align-self: stretch;
   flex-shrink: 0;
+  opacity: 0;
+  animation: fadeInPhoto 1s 0.6s forwards;
+}
+
+@keyframes fadeInPhoto {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .hero-photo-seamless img {
@@ -819,7 +826,12 @@ section {
     top: 80;
     width: 55%;
     height: 100%;
-    opacity: 0.35;
+    animation: fadeInPhoto900 1s 0.6s both;
+  }
+
+  @keyframes fadeInPhoto900 {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 
   .hero-photo-seamless img {
@@ -829,6 +841,8 @@ section {
     -webkit-mask-image:
       linear-gradient(to right, transparent 0%, black 40%),
       linear-gradient(to top, transparent 0%, black 12%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
   }
 }
 
@@ -851,16 +865,23 @@ section {
     top: 80;
     width: 65%;
     height: 100%;
-    opacity: 0.18;
+    animation: fadeInPhoto768 1.2s 0.8s both;
+  }
+
+  @keyframes fadeInPhoto768 {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 0.18; transform: translateX(0); }
   }
 
   .hero-photo-seamless img {
     mask-image:
       linear-gradient(to right, transparent 0%, black 45%),
-      linear-gradient(to top, transparent 0%, black 10%);
+      linear-gradient(to top, transparent 0%, black 20%);
     -webkit-mask-image:
       linear-gradient(to right, transparent 0%, black 45%),
-      linear-gradient(to top, transparent 0%, black 10%);
+      linear-gradient(to top, transparent 0%, black 20%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
   }
 
   .hero-left { position: relative; z-index: 1; }
@@ -890,6 +911,11 @@ section {
 
   .hero-photo-seamless {
     width: 80%;
-    opacity: 0.12;
+    animation: fadeInPhoto420 1.2s 0.8s both;
+  }
+
+  @keyframes fadeInPhoto420 {
+    from { opacity: 0; transform: translateX(15px); }
+    to   { opacity: 0.12; transform: translateX(0); }
   }
 }
