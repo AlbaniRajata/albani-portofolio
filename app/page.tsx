@@ -33,8 +33,8 @@ const projects = [
   {
     tag: "Internship",
     name: "Procurement & Reporting System",
-    desc: "An internal web system for procurement, reporting, and data workflows. Includes JWT auth, role-based access control, file uploads, PDF and Excel generation, plus Stripe and Google API integration.",
-    stack: ["React", "Node.js", "PostgreSQL", "Redux", "Stripe"],
+    desc: "Full-stack internal web system for procurement, reporting, and data management. Built RESTful APIs with Node.js and Express, JWT auth, RBAC, and secure middleware. PostgreSQL for data storage, plus file uploads, Excel export/import, PDF generation, and notifications. Frontend with React (Vite), Redux Toolkit, Axios, Ant Design, and data visualization dashboards.",
+    stack: ["React", "Node.js", "PostgreSQL", "Redux", "Express"],
     github: null,
   },
   {
