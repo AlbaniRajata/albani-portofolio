@@ -73,7 +73,10 @@ const projects = [
   },
 ];
 
-const skillGroups = [
+type Chip = { label: string; highlight?: boolean };
+type SkillGroup = { title: string; chips: Chip[] };
+
+const skillGroups: SkillGroup[] = [
   {
     title: "Core Stack",
     chips: [
