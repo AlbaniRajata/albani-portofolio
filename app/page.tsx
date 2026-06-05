@@ -31,53 +31,46 @@ const MailIcon = () => (
 
 const projects = [
   {
+    tag: "Freelance",
+    name: "AstroTravel Ticketing & Operations System",
+    desc: "Built an end-to-end travel ticketing and operations web application using AdonisJS, React.js (Inertia.js), Tailwind CSS, and TypeScript. Managed complex PostgreSQL databases for routes, schedules, and fleet. Built ticketing transactions, payment, refund, and promo management, along with a Finance & Admin dashboard. Implemented MVC, OOP, and Clean Code.",
+    stack: ["AdonisJS", "React", "TypeScript", "PostgreSQL", "Tailwind"],
+    github: null,
+  },
+  {
+    tag: "Thesis",
+    name: "PMW & INBIS Entrepreneurship Portal",
+    desc: "Developed an end-to-end entrepreneurship portal web application. Built the backend using Node.js (Express.js) with MVC and Clean Code patterns. Created efficient REST APIs integrated with React.js and Material-UI. Managed PostgreSQL relational database with SQL query optimization. Conducted troubleshooting and unit testing with Jest.",
+    stack: ["Node.js", "Express", "React", "PostgreSQL", "Jest"],
+    github: null,
+  },
+  {
     tag: "Internship",
     name: "Procurement & Reporting System",
-    desc: "Full-stack internal web system for procurement, reporting, and data management. Built RESTful APIs with Node.js and Express, JWT auth, RBAC, and secure middleware. PostgreSQL for data storage, plus file uploads, Excel export/import, PDF generation, and notifications. Frontend with React (Vite), Redux Toolkit, Axios, Ant Design, and data visualization dashboards.",
+    desc: "Developed a web-based procurement and internal reporting system. Built backend using Node.js, Express, and PostgreSQL with 20+ REST API endpoints. Implemented user auth, role-based access, file upload, Excel export, and PDF generation. Built reporting dashboard using React and Redux Toolkit.",
     stack: ["React", "Node.js", "PostgreSQL", "Redux", "Express"],
     github: null,
   },
   {
     tag: "Independent",
-    name: "Flicked App",
-    desc: "A Flutter movie app connected to the TMDB REST API. Browse categories, search titles, get dynamic backgrounds per movie, and switch between light and dark mode.",
-    stack: ["Flutter", "Dart", "TMDB API"],
-    github: "https://github.com/AlbaniRajata/flicked_app",
-  },
-  {
-    tag: "Independent",
     name: "Order Taking App",
-    desc: "An order management app built with React and TypeScript. Firebase handles authentication and the Firestore database, with real-time updates and a clean UI powered by Chakra UI.",
+    desc: "Built an order management app with React, TypeScript, Firebase Authentication, and Firestore. Developed user authentication, real-time data management, and backend integrations. Designed responsive UI with Chakra UI.",
     stack: ["React", "TypeScript", "Firebase", "Chakra UI"],
     github: "https://github.com/AlbaniRajata/order-taking-app",
   },
   {
-    tag: "Independent",
-    name: "Chatify",
-    desc: "A real-time chat app where users can send messages and share images. Built on Firebase Firestore and Storage, with live data sync and a responsive interface that stays snappy under load.",
-    stack: ["React", "Firebase", "Firestore", "Storage"],
-    github: "https://github.com/AlbaniRajata/Chatify_App",
-  },
-  {
-    tag: "Independent",
-    name: "React AI Chatbot",
-    desc: "A chatbot that streams responses in real time using both OpenAI and Gemini APIs. Renders Markdown output, auto-scrolls the conversation, and resizes the input field dynamically as you type.",
-    stack: ["React", "OpenAI API", "Gemini API"],
-    github: "https://github.com/AlbaniRajata/react-ai-chatbot",
-  },
-  {
     tag: "Academic",
-    name: "HRIS Mobile App",
-    desc: "A Human Resources Information System for mobile built with Flutter. Connects to a backend API for live HR data, with real-time reads and a clean interface built for daily use.",
-    stack: ["Flutter", "Dart", "REST API"],
-    github: "https://github.com/AlbaniRajata/sdm",
-  },
-  {
-    tag: "Academic",
-    name: "HRIS Web System",
-    desc: "A web-based HR management system built with Laravel. Covers employee data management, task distribution with progress tracking, real-time notifications for assignments and deadlines, document storage, and performance reports based on completed activities. Supports four roles: Admin, PIC, Team Member, and Leader.",
-    stack: ["Laravel", "PHP", "MySQL"],
+    name: "HRIS System (Sistem Informasi SDM)",
+    desc: "Collaborated in a team to design and develop an integrated Human Resources Information System. Developed REST APIs using PHP (Laravel) with OOP and MVC architecture. Managed MySQL database for attendance. Developed a responsive mobile interface using Flutter.",
+    stack: ["Laravel", "PHP", "MySQL", "Flutter", "Dart"],
     github: "https://github.com/AlbaniRajata/PBL_SDM",
+  },
+  {
+    tag: "Academic",
+    name: "Satisfaction Survey System",
+    desc: "Contributed as a front-end developer for a survey website project. Built a responsive and interactive user interface using HTML, CSS, and JavaScript.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    github: null,
   },
 ];
 
@@ -99,103 +92,62 @@ const skillGroups: SkillGroup[] = [
   {
     title: "Languages & Frameworks",
     chips: [
-      { label: "Dart" },
-      { label: "Flutter" },
-      { label: "Laravel" },
       { label: "Express.js" },
-      { label: "REST APIs" },
+      { label: "Laravel" },
+      { label: "PHP" },
+      { label: "Flutter" },
+      { label: "Dart" },
+      { label: "Vue.js/Nuxt" },
     ],
   },
   {
-    title: "Database & Services",
+    title: "Architecture & Design",
     chips: [
-      { label: "Firebase" },
-      { label: "Firestore" },
-      { label: "JSON Server" },
-      { label: "JWT Auth" },
-      { label: "Stripe" },
+      { label: "REST API" },
+      { label: "MVC Architecture" },
+      { label: "OOP" },
+      { label: "SOLID Principles" },
+      { label: "Clean Code" },
     ],
   },
   {
-    title: "Tools & Design",
+    title: "Tools & Infrastructure",
     chips: [
       { label: "Git" },
-      { label: "Figma" },
+      { label: "Linux Server" },
+      { label: "Firebase" },
       { label: "Postman" },
-      { label: "Photoshop" },
-      { label: "CorelDRAW" },
-      { label: "VS Code" },
+      { label: "Deployment" },
     ],
   },
 ];
 
 const certifications = [
-  { name: "SQL (Intermediate)", org: "HackerRank · Feb 2026" },
-  { name: "Node.js (Intermediate)", org: "HackerRank · Feb 2026" },
-  { name: "JavaScript (Intermediate)", org: "HackerRank · Feb 2026" },
-  { name: "Software Engineer", org: "HackerRank · Feb 2026" },
-  { name: "The Complete Microsoft Excel Course 2025", org: "Udemy · Aug 2025" },
-  { name: "Digital Marketing: Beginner to Pro", org: "Udemy · Mar 2025" },
+  { name: "Software Engineering", org: "HackerRank · 2026" },
+  { name: "JavaScript (Intermediate)", org: "HackerRank · 2026" },
+  { name: "Node.js (Intermediate)", org: "HackerRank · 2026" },
+  { name: "SQL (Intermediate)", org: "HackerRank · 2026" },
   {
     name: "Flutter REST Movie App: Master Flutter REST API Development",
-    org: "Udemy · Feb 2025",
-  },
-  {
-    name: "React AI Chatbot App built with ChatGPT and Gemini AI",
-    org: "Udemy · Jan 2025",
-  },
-  {
-    name: "Learn HTML, CSS, JS the Hard Way: with Projects",
-    org: "Udemy · Jan 2025",
-  },
-  {
-    name: "Build A Chat Application With Firebase, Flutter and Provider",
-    org: "Udemy · Jan 2025",
+    org: "Udemy · 2025",
   },
   {
     name: "Build Full Stack Web App with React and Firebase",
-    org: "Udemy · Jan 2025",
+    org: "Udemy · 2025",
   },
 ];
 
 const experiences = [
   {
-    period: "Aug – Dec 2025",
+    period: "Jul 2025 – Dec 2025",
     company: "PT Intidaya Energitama",
-    role: "Full Stack Developer Intern",
+    role: "Software Engineer Intern",
     bullets: [
-      "Built and maintained a web-based procurement and investment system using React and Node.js.",
-      "Handled user authentication, role management, and module integration to fit the company's actual business workflows.",
-      "Worked through debugging and refactoring cycles to bring the application to a stable, consistent state.",
-      "Collaborated with internal teams to tighten up backend logic and keep it in sync with what the frontend needed.",
-    ],
-  },
-  {
-    period: "Jul 2023 – Present",
-    company: "Instagram & Fiverr",
-    role: "Apparel Designer",
-    bullets: [
-      "Designed and sold apparel artwork for local and international clients.",
-      "Ran a design-focused Instagram account with daily posts to grow a client base organically.",
-      "Took on custom projects for brand owners, from initial concept to final delivery.",
-    ],
-  },
-  {
-    period: "Feb 2020 – 2021",
-    company: "Freelance",
-    role: "Logo Designer",
-    bullets: [
-      "Worked directly with clients to understand their brand and translate it into a visual identity.",
-      "Produced original logo concepts that felt relevant and ownable rather than generic.",
-    ],
-  },
-  {
-    period: "Nov 2024 – Apr 2025",
-    company: "Resah Itu Wajar",
-    role: "Visual Division Member",
-    bullets: [
-      "Created visual content for social media, making sure it matched each event's theme.",
-      "Coordinated with other teams to keep the overall communication visually consistent.",
+      "Developed and maintained a web-based procurement and investment system using React, Node.js, and PostgreSQL.",
+      "Built and managed 15+ REST API endpoints for authentication, reporting, and company operational needs.",
+      "Implemented JWT authentication, role-based access control, and data validation to improve system security and integrity.",
+      "Performed deployment, monitoring, troubleshooting, and source code performance optimization to ensure stable application operation.",
+      "Collaborated with internal teams on feature development, system integration, and aligning with business requirements.",
     ],
   },
 ];
@@ -381,22 +333,23 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              I&apos;m <strong>Albani Rajata Malik</strong>, a Full Stack
-              Software Developer in my final year at{" "}
-              <strong>State Polytechnic of Malang</strong>, majoring in Business
-              Information Systems.
+              I am an <strong>Software Engineer</strong> with solid experience in
+              analyzing system requirements, designing, developing, and
+              implementing web-based applications end-to-end.
             </p>
             <p>
-              My stack revolves around{" "}
-              <strong>React, Node.js, TypeScript, and PostgreSQL</strong>. I
-              enjoy working across the full product lifecycle, from mapping out
-              business logic and designing databases, to building interfaces
-              that people actually want to use.
+              I am proficient in the <strong>Node.js (Express.js)</strong> and{" "}
+              <strong>PHP (Laravel)</strong> ecosystems, and experienced in
+              designing REST API architectures emphasizing OOP, MVC, SOLID
+              principles, and Clean Code. I am accustomed to working with
+              relational databases such as <strong>PostgreSQL</strong> and{" "}
+              <strong>MySQL</strong>.
             </p>
             <p>
-              Before getting deep into code, I spent years doing graphic design
-              and apparel branding. That background still shapes how I approach
-              the frontend and the visual side of any product I build.
+              I have strong analytical, problem-solving, and troubleshooting
+              skills, and am responsive in deploying and maintaining
+              applications to ensure they run optimally and stably. I
+              collaborate well both individually and within a team.
             </p>
             <div className="about-links">
               <a
@@ -426,19 +379,19 @@ export default function Home() {
           <div className="about-stats reveal">
             <div className="stat-card">
               <div className="stat-num">3+</div>
-              <div className="stat-label">Years in Design</div>
+              <div className="stat-label">Years of Coding</div>
             </div>
             <div className="stat-card">
               <div className="stat-num">6+</div>
               <div className="stat-label">Projects Built</div>
             </div>
             <div className="stat-card">
-              <div className="stat-num">10+</div>
+              <div className="stat-num">5+</div>
               <div className="stat-label">Certifications</div>
             </div>
             <div className="stat-card">
-              <div className="stat-num">860</div>
-              <div className="stat-label">PECT English Score</div>
+              <div className="stat-num">850</div>
+              <div className="stat-label">TOEIC English Score</div>
             </div>
           </div>
         </div>
