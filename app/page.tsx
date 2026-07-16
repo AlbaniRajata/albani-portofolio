@@ -31,6 +31,13 @@ const MailIcon = () => (
 
 const projects = [
   {
+    tag: "Independent",
+    name: "Terava App (TB Treatment Tracker)",
+    desc: "Developed a Flutter mobile app to help TB patients digitally track daily medication adherence. Integrated Firebase (Auth, Firestore) for real-time treatment plans, Hive for offline support, and Flutter Local Notifications for daily reminders. Managed state with Riverpod and navigation with Go Router.",
+    stack: ["Flutter", "Firebase", "Riverpod", "Hive"],
+    github: null,
+  },
+  {
     tag: "Freelance",
     name: "AstroTravel Ticketing & Operations System",
     desc: "Built an end-to-end travel ticketing and operations web application using AdonisJS, React.js (Inertia.js), Tailwind CSS, and TypeScript. Managed complex PostgreSQL databases for routes, schedules, and fleet. Built ticketing transactions, payment, refund, and promo management, along with a Finance & Admin dashboard. Implemented MVC, OOP, and Clean Code.",
@@ -71,6 +78,27 @@ const projects = [
     desc: "Contributed as a front-end developer for a survey website project. Built a responsive and interactive user interface using HTML, CSS, and JavaScript.",
     stack: ["HTML", "CSS", "JavaScript"],
     github: null,
+  },
+  {
+    tag: "Independent",
+    name: "Flicked App",
+    desc: "A Flutter movie app connected to the TMDB REST API. Browse categories, search titles, get dynamic backgrounds per movie, and switch between light and dark mode.",
+    stack: ["Flutter", "Dart", "TMDB API"],
+    github: "https://github.com/AlbaniRajata/flicked_app",
+  },
+  {
+    tag: "Independent",
+    name: "Chatify",
+    desc: "A real-time chat app where users can send messages and share images. Built on Firebase Firestore and Storage, with live data sync and a responsive interface that stays snappy under load.",
+    stack: ["React", "Firebase", "Firestore", "Storage"],
+    github: "https://github.com/AlbaniRajata/Chatify_App",
+  },
+  {
+    tag: "Independent",
+    name: "React AI Chatbot",
+    desc: "A chatbot that streams responses in real time using both OpenAI and Gemini APIs. Renders Markdown output, auto-scrolls the conversation, and resizes the input field dynamically as you type.",
+    stack: ["React", "OpenAI API", "Gemini API"],
+    github: "https://github.com/AlbaniRajata/react-ai-chatbot",
   },
 ];
 
@@ -123,6 +151,8 @@ const skillGroups: SkillGroup[] = [
 ];
 
 const certifications = [
+  { name: "TOEIC English Proficiency (Score: 850)", org: "ETS" },
+  { name: "Computer Software Programming", org: "BNSP" },
   { name: "Software Engineering", org: "HackerRank · 2026" },
   { name: "JavaScript (Intermediate)", org: "HackerRank · 2026" },
   { name: "Node.js (Intermediate)", org: "HackerRank · 2026" },
@@ -133,6 +163,18 @@ const certifications = [
   },
   {
     name: "Build Full Stack Web App with React and Firebase",
+    org: "Udemy · 2025",
+  },
+  {
+    name: "React AI Chatbot App built with ChatGPT and Gemini AI",
+    org: "Udemy · 2025",
+  },
+  {
+    name: "Learn Html, CSS, JS the hard way: with projects",
+    org: "Udemy · 2025",
+  },
+  {
+    name: "Build A Chat Application With Firebase, Flutter and Provider",
     org: "Udemy · 2025",
   },
 ];
@@ -290,7 +332,7 @@ export default function Home() {
       <section id="hero" className="hero">
         <div className="hero-bg-text">DEV</div>
         <div className="hero-left">
-          <div className="hero-tag">Full Stack Software Developer</div>
+          <div className="hero-tag">Full Stack Software Engineer</div>
           <h1 className="hero-name">
             Albani
             <br />
@@ -299,10 +341,7 @@ export default function Home() {
             Malik
           </h1>
           <p className="hero-desc">
-            I build web and mobile applications from the ground up. My work
-            covers everything from API design and database architecture to
-            frontend performance and user experience. Based in Malang,
-            Indonesia.
+            I engineer robust web and mobile applications from the ground up. Specializing in end-to-end development, my work spans across designing scalable backend architectures, optimizing databases, and building performant, user-centric frontends. Based in Malang, Indonesia.
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn-primary">
@@ -333,23 +372,16 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              I am an <strong>Software Engineer</strong> with solid experience in
-              analyzing system requirements, designing, developing, and
-              implementing web-based applications end-to-end.
+              I am a <strong>Full Stack Software Engineer</strong> with solid experience in
+              analyzing system requirements, designing, and engineering
+              web-based applications from concept to deployment.
             </p>
             <p>
-              I am proficient in the <strong>Node.js (Express.js)</strong> and{" "}
-              <strong>PHP (Laravel)</strong> ecosystems, and experienced in
-              designing REST API architectures emphasizing OOP, MVC, SOLID
-              principles, and Clean Code. I am accustomed to working with
-              relational databases such as <strong>PostgreSQL</strong> and{" "}
-              <strong>MySQL</strong>.
+              On the backend, my core expertise lies in the <strong>Node.js (Express.js)</strong> ecosystem, where I architect scalable REST APIs emphasizing OOP, MVC, SOLID principles, and Clean Code. I also have foundational experience working with <strong>PHP (Laravel)</strong> on select projects. I am highly experienced in managing databases such as <strong>PostgreSQL</strong>,{" "}
+              <strong>MySQL</strong>, and <strong>Firebase</strong>. On the frontend, I build interactive user interfaces with <strong>React.js (JavaScript, TypeScript)</strong> and develop cross-platform mobile apps using <strong>Flutter</strong>.
             </p>
             <p>
-              I have strong analytical, problem-solving, and troubleshooting
-              skills, and am responsive in deploying and maintaining
-              applications to ensure they run optimally and stably. I
-              collaborate well both individually and within a team.
+              I possess strong analytical and problem-solving skills. I take a product-minded approach, ensuring applications run optimally, are secure, and deliver a seamless user experience. I thrive in collaborative environments and adapt quickly to new technologies.
             </p>
             <div className="about-links">
               <a
@@ -382,11 +414,11 @@ export default function Home() {
               <div className="stat-label">Years of Coding</div>
             </div>
             <div className="stat-card">
-              <div className="stat-num">6+</div>
+              <div className="stat-num">10+</div>
               <div className="stat-label">Projects Built</div>
             </div>
             <div className="stat-card">
-              <div className="stat-num">5+</div>
+              <div className="stat-num">10+</div>
               <div className="stat-label">Certifications</div>
             </div>
             <div className="stat-card">
